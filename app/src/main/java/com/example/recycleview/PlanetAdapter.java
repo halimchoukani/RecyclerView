@@ -1,5 +1,7 @@
 package com.example.recycleview;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +14,11 @@ import java.util.List;
 public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetViewHolder> {
 
     private List<Planet> planets;
+    private Context context;
 
-    public PlanetAdapter(List<Planet> planets) {
+    public PlanetAdapter(Context context,List<Planet> planets) {
         this.planets = planets;
+        this.context = context;
     }
 
     @Override
@@ -29,6 +33,14 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         holder.planetName.setText(planet.getName());
         holder.planetDescription.setText(planet.getDescription());
         holder.planetImage.setImageResource(planet.getImageResourceId());
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, PlanetDetail.class);
+            intent.putExtra(PlanetDetail.EXTRA_PLANET_NAME, planet.getName());
+            intent.putExtra(PlanetDetail.EXTRA_PLANET_DESCRIPTION, planet.getDescription());
+            intent.putExtra(PlanetDetail.EXTRA_PLANET_IMAGE, planet.getImageResourceId());
+            context.startActivity(intent);
+        });
     }
 
     @Override

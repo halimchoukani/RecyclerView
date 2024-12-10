@@ -39,18 +39,7 @@ public class MainActivity extends AppCompatActivity {
         planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
         planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
         planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        planets.add(new Planet("Neptune", "The windiest planet in our solar system.", R.drawable.neptune));
-        adapter = new PlanetAdapter(planets);
+        adapter = new PlanetAdapter(this,planets);
         recyclerView.setAdapter(adapter);
     }
 }
